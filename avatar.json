@@ -2,7 +2,12 @@
   "name": "Crumb",
   "description": "",
   "authors": [
-    "Jarichio"
+    "Jarichio",
+    "Fripe"
   ],
-  "color": "#ffffff"
+  "color": "#DAAD80",
+
+  "autoScripts": [
+    "script"
+  ]
 }
