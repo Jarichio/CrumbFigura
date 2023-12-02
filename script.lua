@@ -5,18 +5,17 @@ local config = {
 }
 
 function setExpression(expression)
-    config.expression:setPrimaryTexture("CUSTOM", textures[expression])
+    config.expression:setPrimaryTexture("CUSTOM", textures["Expressions." .. expression])
 end
 
 function events.RENDER()
     -- Reset the expression in case nothing else is setting it
-    setExpression("Expressions.NeutralExpression")
+    setExpression("NeutralExpression")
 
+    -- Canibalism :(
     local isEating = player:getActiveItem():getUseAction() == "EAT"
     local isEatingBread = isEating and player:getActiveItem().id == "minecraft:bread"
-    if isEatingBread then setExpression("Expressions.CryingExpression") end
-    
-    -- log(textures.crumb:getName())
+    if isEatingBread then setExpression("CryingExpression") end
 end
 
 -- Make vanilla model parts invisible
